@@ -56,10 +56,10 @@ sequenceDiagram
 > 🧨 Before you click the "Assessment Complete" button on the Learning Platform, add your answers below for each question and make a commit. It is your option to request a face-to-face meeting with a coach for a vocabulary review.
 
 1. Should transient state be represented in a database diagram? Why, or why not?
-   > Your answer here
+   > No, transient state will be stored in the browser, until the POST method is made and it gets added to the database. So we don't need to represent it initially in the ERD.
 2. In the **FoodTruck** module, you are **await**ing the invocataion of all of the component functions _(e.g. sales, veggie options, etc.)_. Why must you use the `await` keyword there? Explain what happens if you remove it.
-   > Your answer here
+   > I ended up routing all of these function calls on main.js, but to answer your question, we are awaiting all of these function calls because there is a time delay in accesssing the JSON server that contains our entire database that our DOM is rendering off of. We tell javascript to await or expect the information to get filled in once the server has been accessed, then everything can render.
 3. When the user is making choices by selecting radio buttons, explain how that data is retained so that the **Purchase Combo** button works correctly.
-   > Your answer here
+   > So currently, my main.js is only re-rendering once the "newOrderCreated" is heard (ie when the purchase button is clicked). The radio buttons keep their selections and the purchase is logged with the Sales module. 
 4. You used the `map()` array method in the self assessment _(at least, you should have since it is a learning objective)_. Explain why that function is helpful as a replacement for a `for..of` loop.
-   > Your answer here
+   > I used the .map() array method several different times throughout this assessment to iterate multiple arrays. It is a much simpler way of writing for of loops, and achieves the same result. I use .map when I want to convert data, in this case, into HTML radio buttons. 
